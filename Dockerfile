@@ -1,4 +1,4 @@
-FROM docker.io/golang:1.22.0
+FROM docker.io/golang:1.22.4
 
 LABEL org.opencontainers.image.title=ceph-cft
 LABEL org.opencontainers.image.description="Configure your ceph cluster with environment variables"
