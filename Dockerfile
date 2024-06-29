@@ -15,4 +15,9 @@ COPY . /app
 
 WORKDIR /app
 
-RUN go mod download && go build -ldflags="-s -w" -o /app/ceph-cft
+RUN go mod download && \
+    go build -ldflags="-s -w" -o /app/ceph-cft && \
+    chmod +x /app/ceph-cft && \
+    cp /app/ceph-cft /usr/local/bin/ceph-cft
+
+ENTRYPOINT [ "sh", "-c", "ceph-cft" ]
